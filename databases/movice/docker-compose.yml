@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+
+  db_movice:
+    image: postgres:11.2-alpine
+    environment:
+      POSTGRES_PASSWORD: movice
+      POSTGRES_DB: movice
+    ports:
+      - 5400:5432
+    volumes:
+      - db_movice:/var/lib/postgresql/data
+    
+volumes:
+  db_movice:
